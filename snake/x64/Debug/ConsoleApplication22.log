@@ -1,0 +1,7 @@
+﻿  ConsoleApplication22.cpp
+C:\Users\Admin\Documents\SS2Resh\ConsoleApplication22\ConsoleApplication22.cpp(27,29): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Admin\Documents\SS2Resh\ConsoleApplication22\ConsoleApplication22.cpp(28,50): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Admin\Documents\SS2Resh\ConsoleApplication22\ConsoleApplication22.cpp(48,45): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Admin\Documents\SS2Resh\ConsoleApplication22\ConsoleApplication22.cpp(62,45): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Admin\Documents\SS2Resh\ConsoleApplication22\ConsoleApplication22.cpp(73,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  ConsoleApplication22.vcxproj -> C:\Users\Admin\Documents\SS2Resh\ConsoleApplication22\x64\Debug\ConsoleApplication22.exe
