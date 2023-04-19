@@ -1,6 +1,6 @@
 # Catalog
-.vs
-x64
+.vs/
+x64/
 
 # Prerequisites
 *.d
