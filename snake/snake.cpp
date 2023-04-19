@@ -70,6 +70,7 @@ bool unions(int** snake, int* fruit) {
 
 int main()
 {
+	//32652746572345635
 	srand(time(NULL));
 	//создание объектов
 	char** field = createField(SIZE_FIELD);
