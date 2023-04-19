@@ -1,7 +1,8 @@
-﻿  ConsoleApplication22.cpp
-C:\Users\Admin\Documents\SS2Resh\ConsoleApplication22\ConsoleApplication22.cpp(27,29): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
-C:\Users\Admin\Documents\SS2Resh\ConsoleApplication22\ConsoleApplication22.cpp(28,50): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
-C:\Users\Admin\Documents\SS2Resh\ConsoleApplication22\ConsoleApplication22.cpp(48,45): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
-C:\Users\Admin\Documents\SS2Resh\ConsoleApplication22\ConsoleApplication22.cpp(62,45): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
-C:\Users\Admin\Documents\SS2Resh\ConsoleApplication22\ConsoleApplication22.cpp(73,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-  ConsoleApplication22.vcxproj -> C:\Users\Admin\Documents\SS2Resh\ConsoleApplication22\x64\Debug\ConsoleApplication22.exe
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(510,5): warning MSB8028: промежуточный каталог (x64\Debug\) содержит файлы, которые используются совместно с другим проектом (ConsoleApplication22.vcxproj).  Это может привести к ошибкам очистки и перестроения.
+  snake.cpp
+C:\Users\Admin\Desktop\classWorkBV211\snake\snake.cpp(27,29): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Admin\Desktop\classWorkBV211\snake\snake.cpp(28,50): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Admin\Desktop\classWorkBV211\snake\snake.cpp(48,45): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Admin\Desktop\classWorkBV211\snake\snake.cpp(62,45): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Admin\Desktop\classWorkBV211\snake\snake.cpp(74,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  ConsoleApplication22.vcxproj -> C:\Users\Admin\Desktop\classWorkBV211\snake\x64\Debug\snake.exe

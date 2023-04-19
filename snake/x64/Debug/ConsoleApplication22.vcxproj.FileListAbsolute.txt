@@ -1,1 +1,2 @@
 C:\Users\Admin\Documents\SS2Resh\ConsoleApplication22\x64\Debug\ConsoleApplication22.exe
+C:\Users\Admin\Desktop\classWorkBV211\snake\x64\Debug\snake.exe
