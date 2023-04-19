@@ -79,9 +79,8 @@ void step(int** snake, char side) {
 
 	switch (side) {
 	case 'w':
-		//дописать условие и отсавшиеся направления
-		if (snake[0][0] - 1 != snake[1][0]) {
 
+		if (snake[0][0] - 1 != snake[1][0]) {
 			for (int i = size - 1; i > 0; i--) {
 				swap(snake[i], snake[i - 1]);
 			}
