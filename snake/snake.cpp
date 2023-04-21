@@ -20,6 +20,17 @@ int** createSnake(int size) {
 
 }
 
+char keyboard() {
+	char s;
+	while (true) {
+		if (_kbhit()) {
+			s = _getch();
+			return s;
+		}
+		else return ' ';
+	}
+}
+
 void render(char** field, int** snake, int* fruit) {
 	system("cls");
 
@@ -64,6 +75,16 @@ void setPosition(int* fruit, int y, int x) {
 	fruit[1] = x;
 }
 
+bool gameOver(int** snake) {
+	int size = _msize(snake) / sizeof(snake[0]);
+	for (int i = 1; i < size; i++) {
+		if (snake[i][0] == snake[0][0] && snake[i][1] == snake[0][1]) {
+			return true;
+		}
+	}
+	return false;
+}
+
 
 
 bool unions(int** snake, int* fruit) {
@@ -96,15 +117,23 @@ bool eat(int**& snake, int* fruit, int* oldTail) {
 	return false;
 }
 
-int* step(int** snake, char side) {
+int* step(int** snake, char& side, char& oldS) {
 	int size = _msize(snake) / sizeof(snake[0]);
 	int* oldTail = new int[2]{snake[size-1][0],snake[size - 1][1] };
+	if (oldS == 'w' && side == 's' ||
+		oldS == 's' && side == 'w' ||
+		oldS == 'a' && side == 'd' ||
+		oldS == 'd' && side == 'a') {
+		side = oldS;
+	}
+
+	
+
 
 	switch (side) {
 	case 'w':
 		//дописать условие и отсавшиеся направления
-		if (snake[0][0] - 1 != snake[1][0]) {
-
+		
 			for (int i = size - 1; i > 0; i--) {
 				swap(snake[i], snake[i - 1]);
 			}
@@ -113,11 +142,10 @@ int* step(int** snake, char side) {
 			}
 			else snake[0][0] = snake[1][0] - 1; //y
 			snake[0][1] = snake[1][1]; //x
-
-		}
+			
 		break;
 	case 's':
-		if (snake[0][0] + 1 != snake[1][0]) {
+		
 			for (int i = size - 1; i > 0; i--) {
 				swap(snake[i], snake[i - 1]);
 			}
@@ -126,11 +154,10 @@ int* step(int** snake, char side) {
 			}
 			else snake[0][0] = snake[1][0] + 1; //y
 			snake[0][1] = snake[1][1]; //x
-			
-		}
+					
 		break;
 	case 'a':
-		if (snake[0][1] - 1 != snake[1][1]) {
+		
 			for (int i = size - 1; i > 0; i--) {
 				swap(snake[i], snake[i - 1]);
 			}
@@ -140,10 +167,10 @@ int* step(int** snake, char side) {
 			else snake[0][1] = snake[1][1] - 1; //y
 			snake[0][0] = snake[1][0]; //x
 			
-		}
+		
 		break;
 	case 'd':
-		if (snake[0][1] + 1 != snake[1][1]) {
+		
 			for (int i = size - 1; i > 0; i--) {
 				swap(snake[i], snake[i - 1]);
 			}
@@ -153,9 +180,13 @@ int* step(int** snake, char side) {
 			else snake[0][1] = snake[1][1] + 1; //x
 			snake[0][0] = snake[1][0]; //y
 			
-		}
+		
+		break;
+	default:
+		side = oldS;
 		break;
 	}
+	oldS = side;
 	return oldTail;
 	
 
@@ -179,17 +210,26 @@ int main()
 	//отрисовка
 	render(field, snake, fruit);
 	int* oldTail = nullptr;
+	char s='w';
+	char buf;
+	char oldS=s;
 	while (true) {
-		char s;
-		cin >> s;
+		Sleep(SPEED);
+		buf = keyboard();
+		if (buf != ' ') s = buf;
 		delete[]oldTail;
-		oldTail = step(snake, s);
+		oldTail = step(snake, s, oldS);
 		if (eat(snake, fruit, oldTail)) {
 			do {
 				setPosition(fruit, random(0, SIZE_FIELD - 1), random(0, SIZE_FIELD - 1));
 			} while (!unions(snake, fruit));
 		}
-		
+		if (gameOver(snake)) {
+			system("cls");
+			cout << "GAME OVER";
+			break;
+
+		}
 		render(field, snake, fruit);
 
 	}
