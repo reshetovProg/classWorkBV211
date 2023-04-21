@@ -85,8 +85,6 @@ bool gameOver(int** snake) {
 	return false;
 }
 
-
-
 bool unions(int** snake, int* fruit) {
 	int size = _msize(snake) / sizeof(snake[0]);
 	for (int i = 0; i < size; i++) {
