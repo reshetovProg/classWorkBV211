@@ -94,34 +94,43 @@ void step(int** snake, char side) {
 		}
 		break;
 	case 's':
-		for (int i = size - 1; i > 0; i--) {
-			swap(snake[i], snake[i - 1]);
+		if (snake[0][0] + 1 != snake[1][0]) {
+			for (int i = size - 1; i > 0; i--) {
+				swap(snake[i], snake[i - 1]);
+			}
+			if (snake[1][0] == SIZE_FIELD-1) {
+				snake[0][0] = 0; //y
+			}
+			else snake[0][0] = snake[1][0] + 1; //y
+			snake[0][1] = snake[1][1]; //x
+			
 		}
-		if (snake[1][0] == SIZE_FIELD-1) {
-			snake[0][0] = 0; //y
-		}
-		else snake[0][0] = snake[1][0] + 1; //y
-		snake[0][1] = snake[1][1]; //x
 		break;
 	case 'a':
-		for (int i = size - 1; i > 0; i--) {
-			swap(snake[i], snake[i - 1]);
+		if (snake[0][1] - 1 != snake[1][1]) {
+			for (int i = size - 1; i > 0; i--) {
+				swap(snake[i], snake[i - 1]);
+			}
+			if (snake[1][1] == 0) {
+				snake[0][1] = SIZE_FIELD - 1; //x
+			}
+			else snake[0][1] = snake[1][1] - 1; //y
+			snake[0][0] = snake[1][0]; //x
+			
 		}
-		if (snake[1][1] == 0) {
-			snake[0][1] = SIZE_FIELD - 1; //x
-		}
-		else snake[0][1] = snake[1][1] - 1; //y
-		snake[0][0] = snake[1][0]; //x
 		break;
 	case 'd':
-		for (int i = size - 1; i > 0; i--) {
-			swap(snake[i], snake[i - 1]);
+		if (snake[0][1] + 1 != snake[1][1]) {
+			for (int i = size - 1; i > 0; i--) {
+				swap(snake[i], snake[i - 1]);
+			}
+			if (snake[1][1] == SIZE_FIELD - 1) {
+				snake[0][1] = 0; //x
+			}
+			else snake[0][1] = snake[1][1] + 1; //x
+			snake[0][0] = snake[1][0]; //y
+			
 		}
-		if (snake[1][1] == SIZE_FIELD - 1) {
-			snake[0][1] = 0; //x
-		}
-		else snake[0][1] = snake[1][1] + 1; //x
-		snake[0][0] = snake[1][0]; //y
 		break;
 	}
 	
